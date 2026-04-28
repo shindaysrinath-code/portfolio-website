@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sindhe Srinath - Full-Stack Developer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff006e, #ff0050);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #ff006e;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff006e;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #ff006e, #ff0050);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 80px;
+}
+
+.hero-left {
+    flex: 1;
+    background: #f5f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+}
+
+.hero-right {
+    flex: 1;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+}
+
+.hero-content {
+    animation: slideInUp 0.8s ease-out;
+}
+
+.hero-greeting {
+    font-size: 1.3em;
+    color: #999;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5em;
+    color: #000;
+    margin-bottom: 15px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    color: #888;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    color: #333;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, #ff006e, #ff0050);
+    color: white;
+    transform: translateY(-8px);
+}
+
+/* Hero Right - Image Section */
+.profile-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideInRight 0.8s ease-out;
+    
+}
+
+.profile-image {
+    width: 450px;
+    height: 550px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.2), rgba(255, 0, 80, 0.1));
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6em;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scroll to continue indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff006e;
+    font-size: 1.2em;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 100px 60px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-bottom: 60px;
+    color: #330030;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff006e, #ff0050);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* About Section */
+.about-section {
+    padding: 100px 60px;
+    background: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #1a0033;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #ff006e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #ff006e;
+}
+
+.stat-label {
+    color: #888;
+    font-size: 0.95em;
+    margin-top: 8px;
+}
+
+/* Skills Grid */
+.skills-section {
+    padding: 100px 60px;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+}
+
+.skills-section .section-title {
+    color: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 0, 110, 0.2);
+    border-color: #ff006e;
+    box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+}
+
+.skill-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #ff006e;
+}
+
+.skill-card ul {
+    list-style: none;
+    line-height: 2;
+}
+
+.skill-card li::before {
+    content: '✓ ';
+    color: #ff006e;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 30px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero {
+        flex-direction: column;
+        margin-top: 250px;
+    }
+
+    .hero-left {
+        clip-path: none;
+        padding: 60px 30px;
+        min-height: auto;
+    }
+
+    .hero-name {
+        font-size: 2.5em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+
+    .profile-image {
+        width: 300px;
+        height: 350px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 60px 30px;
+        gap: 40px;
+    }
+
+    .skills-section {
+        padding: 60px 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-section {
+        padding: 60px 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo"><i class="fas fa-code"></i> MY PORTFOLIO</div>
+    <div class="nav-links">
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="mailto:srinathsrinath@gmail.com" class="cta-button">CONTACT ME</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="hero-content">
+            <div class="hero-greeting">Hi, I am</div>
+            <h1 class="hero-name">SINDHE<br>SRINATH</h1>
+            <p class="hero-subtitle">Full-Stack Developer / UI Designer</p>
+            <div class="social-links">
+                <a href="mailto:srinathsrinath@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sindhe-srinath-6238b34b/" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="profile-image-container">
+            <div class="profile-image">
+                <i class="fas fa-user-circle"></i>
+                <img src="./image.png" alt="" height="550px" width="800px">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate full-stack developer with expertise in building modern web applications. 
+            With a strong background in electrical maintenance and current training in full-stack development, 
+            I bring a unique perspective to problem-solving.
+        </p>
+        <p>
+            Dedicated to creating user-friendly interfaces and robust backend solutions, I'm constantly 
+            learning and adapting to new technologies. My goal is to contribute to innovative projects 
+            and make an impact in the tech industry.
+        </p>
+        <div class="about-stats">
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Skills Mastered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+        </div>
+    </div>
+    <div class="about-image">
+        <div style="width: 100%; height: 400px; background: linear-gradient(135deg, rgba(255,0,110,0.1), rgba(255,0,80,0.1)); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 5em; color: rgba(255,0,110,0.3);">
+            <i class="fas fa-laptop-code"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3><i class="fas fa-code"></i> Frontend</h3>
+            <ul>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Bootstrap & Responsive Design</li>
+                <li>UI/UX Design Principles</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fas fa-database"></i> Backend</h3>
+            <ul>
+                <li>Python Programming</li>
+                <li>Web Frameworks</li>
+                <li>RESTful APIs</li>
+                <li>Database Management</li>
+                <li>Server-Side Logic</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fas fa-star"></i> Professional</h3>
+            <ul>
+                <li>Problem Solving</li>
+                <li>Team Collaboration</li>
+                <li>Project Management</li>
+                <li>Communication Skills</li>
+                <li>Adaptability & Learning</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio-section">
+    <h2 class="section-title">Featured Projects</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(255,0,110,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
+            <div style="height: 200px; background: linear-gradient(135deg, #ff006e, #ff0050); display: flex; align-items: center; justify-content: center; font-size: 4em; color: white;">
+                <i class="fas fa-music"></i>
+            </div>
+            <div style="padding: 25px;">
+                <h3 style="margin: 0 0 15px 0; color: #1a0033;">Disco Vibes</h3>
+                <p style="color: #888; margin: 0; line-height: 1.6;">Music playing web application with modern UI and interactive controls.</p>
+                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">HTML5, CSS3, JavaScript</p>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(255,0,110,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
+            <div style="height: 200px; background: linear-gradient(135deg, #ff006e, #ff0050); display: flex; align-items: center; justify-content: center; font-size: 4em; color: white;">
+                <i class="fas fa-paw"></i>
+            </div>
+            <div style="padding: 25px;">
+                <h3 style="margin: 0 0 15px 0; color: #1a0033;">Paw Rescue</h3>
+                <p style="color: #888; margin: 0; line-height: 1.6;">Animal rescue and rehabilitation platform with team collaboration features.</p>
+                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">Full-Stack Development</p>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(255,0,110,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
+            <div style="height: 200px; background: linear-gradient(135deg, #ff006e, #ff0050); display: flex; align-items: center; justify-content: center; font-size: 4em; color: white;">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <div style="padding: 25px;">
+                <h3 style="margin: 0 0 15px 0; color: #1a0033;">Portfolio</h3>
+                <p style="color: #888; margin: 0; line-height: 1.6;">Professional portfolio website with modern design and smooth animations.</p>
+                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p><i class="fas fa-copyright"></i> 2026 Sindhe Srinath | Full-Stack Developer | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

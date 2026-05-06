@@ -375,6 +375,168 @@ nav {
     margin-right: 10px;
 }
 
+/* Education Section */
+.education-section {
+    padding: 100px 60px;
+    background: #f9f9f9;
+}
+
+.education-section .section-title {
+    color: #330030;
+}
+
+.education-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #ff006e;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 0, 110, 0.15);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.education-card h3 {
+    font-size: 1.3em;
+    color: #1a0033;
+    margin: 0;
+    flex: 1;
+    font-weight: 600;
+}
+
+.education-score {
+    background: linear-gradient(135deg, #ff006e, #ff0050);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.education-institution {
+    font-size: 1.05em;
+    color: #ff006e;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.education-period {
+    color: #666;
+    font-size: 0.95em;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.education-location {
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 12px;
+}
+
+.education-location i {
+    margin-right: 8px;
+    color: #ff006e;
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 60px;
+    background: linear-gradient(135deg, #1f0c3d 0%, #2b1a65 100%);
+    color: white;
+}
+
+.contact-section .section-title {
+    color: #fff;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 60px rgba(255, 0, 110, 0.18);
+}
+
+.contact-card i {
+    font-size: 2.2em;
+    color: #ff006e;
+    margin-bottom: 18px;
+}
+
+.contact-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+}
+
+.contact-card p,
+.contact-card a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ff96c7;
+}
+
+.contact-card a:hover {
+    color: #fff;
+}
+
+.contact-card .contact-info {
+    margin-top: 10px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-note {
+    max-width: 760px;
+    margin: 40px auto 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05em;
+}
+
 /* Footer */
 footer {
     background: #000;
@@ -445,6 +607,19 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .education-section {
+        padding: 60px 30px;
+    }
+
+    .education-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .portfolio-section {
         padding: 60px 30px;
     }
@@ -459,9 +634,10 @@ footer p {
     <div class="logo"><i class="fas fa-code"></i> MY PORTFOLIO</div>
     <div class="nav-links">
         <a href="#about">About me</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="mailto:srinathsrinath@gmail.com" class="cta-button">CONTACT ME</a>
+        <a href="#portfolio">My Projects</a>
+        <a href="#contact" class="cta-button">CONTACT ME</a>
     </div>
 </nav>
 
@@ -479,7 +655,7 @@ footer p {
                 <a href="https://github.com/shindaysrinath-code" class="social-icon" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/sindhe-srinath-6238b34b/" class="social-icon" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/sindhe-srinath-62b98a345/" class="social-icon" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -533,8 +709,67 @@ footer p {
         </div>
     </div>
     <div class="about-image">
-        <div style="width: 100%; height: 400px; background: linear-gradient(135deg, rgba(255,0,110,0.1), rgba(255,0,80,0.1)); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 5em; color: rgba(255,0,110,0.3);">
-            <i class="fas fa-laptop-code"></i>
+        <div style="width: 100%; height: 400px; background: linear-gradient(135deg, rgba(255,0,110,0.1), rgba(255,0,80,0.1)); border-radius: 15px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 30px; align-items: center; justify-items: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <i class="fab fa-html5" style="font-size: 3em; color: #ff006e;"></i>
+                <span style="color: #333; font-weight: 600;">HTML5</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <i class="fab fa-css3-alt" style="font-size: 3em; color: #ff006e;"></i>
+                <span style="color: #333; font-weight: 600;">CSS3</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <i class="fab fa-js-square" style="font-size: 3em; color: #ff006e;"></i>
+                <span style="color: #333; font-weight: 600;">JavaScript</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <i class="fab fa-python" style="font-size: 3em; color: #ff006e;"></i>
+                <span style="color: #333; font-weight: 600;">Python</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <i class="fas fa-database" style="font-size: 3em; color: #ff006e;"></i>
+                <span style="color: #333; font-weight: 600;">SQL</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <i class="fas fa-code" style="font-size: 3em; color: #ff006e;"></i>
+                <span style="color: #333; font-weight: 600;">More...</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="education-section">
+    <h2 class="section-title">Education</h2>
+    <div class="education-container">
+        <div class="education-card">
+            <div class="education-header">
+                <h3>Vocational Training in Electrical Trade</h3>
+                <span class="education-score">78%</span>
+            </div>
+            <p class="education-institution">Government ITI Shameerpet</p>
+            <p class="education-period">2019 - 2022</p>
+            <p class="education-location"><i class="fas fa-map-marker-alt"></i> Hyderabad</p>
+        </div>
+
+        <div class="education-card">
+            <div class="education-header">
+                <h3>Class 12 (Science)</h3>
+                <span class="education-score">40%</span>
+            </div>
+            <p class="education-institution">YMCA Junior College</p>
+            <p class="education-period">2018 - 2020</p>
+            <p class="education-location"><i class="fas fa-map-marker-alt"></i> Hyderabad</p>
+        </div>
+
+        <div class="education-card">
+            <div class="education-header">
+                <h3>Class 10</h3>
+                <span class="education-score">70%</span>
+            </div>
+            <p class="education-institution">Z.P.High School, Bollarm</p>
+            <p class="education-period">2016 - 2017</p>
+            <p class="education-location"><i class="fas fa-map-marker-alt"></i> Hyderabad</p>
         </div>
     </div>
 </section>
@@ -584,21 +819,24 @@ footer p {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
         <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(255,0,110,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
             <div style="height: 200px; background: linear-gradient(135deg, #ff006e, #ff0050); display: flex; align-items: center; justify-content: center; font-size: 4em; color: white;">
-                <i class="fas fa-music"></i>
+                <!-- <i class="fas fa-music"></i> -->
+                 <img src="./image copy.png" alt="" width="410px" height="200px">
             </div>
             <div style="padding: 25px;">
                 <h3 style="margin: 0 0 15px 0; color: #1a0033;">Disco Vibes</h3>
                 <p style="color: #888; margin: 0; line-height: 1.6;">Music playing web application with modern UI and interactive controls.</p>
-                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">HTML5, CSS3, JavaScript</p>
-                <a href="https://github.com/shindaysrinath-code/disco-vibes" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; color: #ff006e; font-weight: 600; text-decoration: none;"> 
-                    <i class="fab fa-github"></i> View GitHub
+                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">Code.Org</p>
+                <a href="https://studio.code.org/projects/dance/jH305oM17-CakjgluQfX3EklKo9xuMaWbVTlgsPJeY0" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; color: #ff006e; font-weight: 600; text-decoration: none;"> 
+                    <!-- <i class="fab fa-github"></i> View Disco Vibe -->
+                      <i class="fas fa-external-link-alt"></i> View Project
                 </a>
             </div>
         </div>
 
         <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(255,0,110,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
             <div style="height: 200px; background: linear-gradient(135deg, #ff006e, #ff0050); display: flex; align-items: center; justify-content: center; font-size: 4em; color: white;">
-                <i class="fas fa-paw"></i>
+                <!-- <i class="fas fa-paw"></i> -->
+                <img src="./image copy 2.png" alt=""width="410px" height="200px">
             </div>
             <div style="padding: 25px;">
                 <h3 style="margin: 0 0 15px 0; color: #1a0033;">Paw Rescue</h3>
@@ -611,19 +849,49 @@ footer p {
         </div>
 
         <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(255,0,110,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.1)';">
-            <div style="height: 200px; background: linear-gradient(135deg, #ff006e, #ff0050); display: flex; align-items: center; justify-content: center; font-size: 4em; color: white;">
-                <i class="fas fa-briefcase"></i>
+            <div style="height: 200px; background: linear-gradient(135deg, #ececec, #f7f7f7); display: flex; align-items: center; justify-content: center; font-size: 3em; color: #999;">
+                <!-- <i class="fas fa-globe"></i> -->
+                 <img src="./image copy 4.png" alt="" width="410px" height="200px">
             </div>
             <div style="padding: 25px;">
-                <h3 style="margin: 0 0 15px 0; color: #1a0033;">Portfolio</h3>
-                <p style="color: #888; margin: 0; line-height: 1.6;">Professional portfolio website with modern design and smooth animations.</p>
-                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">HTML, CSS, JavaScript</p>
-                <a href="https://shindaysrinath-code.github.io/portfolio-website/" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; color: #ff006e; font-weight: 600; text-decoration: none;">
-                    <i class="fab fa-github"></i> View GitHub
+                <h3 style="margin: 0 0 15px 0; color: #1a0033;">Personal Website</h3>
+                <p style="color: #888; margin: 0; line-height: 1.6;">Developed a personal portfolio website  Using weebly site and created a mini project that identifies human face shapes (such as round, square, and oval) and provides related information.</p>
+                <p style="color: #ff006e; margin: 15px 0 0 0; font-weight: 600;">Weebly Website</p>
+                <a href="https://sindhe.weebly.com" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; color: #ff006e; font-weight: 600; text-decoration: none;">
+                    
+                    <i class="fas fa-external-link-alt"></i> View Project
+                  
+                    
                 </a>
             </div>
         </div>
     </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-cards">
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p class="contact-info">srinathsrinath@gmail.com</p>
+            <a href="mailto:srinathsrinath@gmail.com" target="_blank" rel="noreferrer"><i class="fas fa-paper-plane"></i> Send a message</a>
+        </div>
+        <div class="contact-card">
+            <i class="fab fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p class="contact-info">Connect with me on LinkedIn for professional updates.</p>
+            <a href="https://www.linkedin.com/in/sindhe-srinath-62b98a345/" target="_blank" rel="noreferrer"><i class="fas fa-external-link-alt"></i> Visit LinkedIn</a>
+        </div>
+        <div class="contact-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p class="contact-info">Explore my repositories and project work on GitHub.</p>
+            <a href="https://github.com/shindaysrinath-code" target="_blank" rel="noreferrer"><i class="fas fa-external-link-alt"></i> View GitHub</a>
+        </div>
+    </div>
+    <p class="contact-note">If you want to collaborate, hire me, or discuss a new project, just choose the best way to reach me above.</p>
 </section>
 
 <!-- Footer -->
